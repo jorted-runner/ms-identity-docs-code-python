@@ -74,6 +74,10 @@ def call_downstream_api():
     ).json()
     return render_template('display.html', result=api_result)
 
+@app.route('/get-site', methods=['GET', 'POST'])
+def get_site():
+    if request.method == 'GET':
+        return render_template('get-site.html')
 
 if __name__ == "__main__":
     app.run()
